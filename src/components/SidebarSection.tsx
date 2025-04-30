@@ -11,7 +11,7 @@ export const SidebarSection = ({
 }: SidebarSectionProps) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   return <details className="mb-4" open={isOpen}>
-      <summary className="text-xs font-semibold text-[#a0a0a0] uppercase p-2 cursor-pointer list-none flex items-center gap-1 hover:text-[#e0e0e0]" onClick={e => {
+      <summary className="text-xs font-semibold text-[#a0a0a0] uppercase p-2 cursor-pointer list-none flex items-center gap-1 hover:text-[#e0e0e0] transition-colors" onClick={e => {
       e.preventDefault();
       setIsOpen(!isOpen);
     }}>
@@ -22,6 +22,6 @@ export const SidebarSection = ({
         </span>
         {title}
       </summary>
-      {children}
+      <div className="mt-1">{children}</div>
     </details>;
 };
